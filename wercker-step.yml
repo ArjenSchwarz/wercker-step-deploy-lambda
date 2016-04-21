@@ -1,5 +1,27 @@
 name: lambda
-version: 1.0.0
+version: "0.9.6"
 description: |
     Deploys your code to a Lambda function
 type: deploy
+properties:
+  properties:
+    access_key:
+        type: string
+        required: true
+    secret_key:
+        type: string
+        required: true
+    function_name:
+        type: string
+        required: true
+    filepath:
+        type: string
+        required: true
+    region:
+        type: string
+        default: "us-east-1"
+        required: false
+    publish:
+        type: string
+        default: true
+        required: false
