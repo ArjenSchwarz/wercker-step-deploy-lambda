@@ -1,7 +1,7 @@
 name: lambda
-version: "0.9.6"
+version: "1.0.0"
 description: |
-    Deploys your code to a Lambda function
+    Deploy your code to a Lambda function
 type: deploy
 properties:
   properties:
