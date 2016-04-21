@@ -2,17 +2,17 @@ box: wercker/golang
 build:
   steps:
     - script:
-      name: go get
-      code: |
-        cd $WERCKER_SOURCE_DIR
-        go version
-        go get -t ./...
+        name: go get
+        code: |
+          cd $WERCKER_SOURCE_DIR
+          go version
+          go get -t ./...
     - wercker/golint
     - script:
-      name: go build
-      code: |
-        go build -a -o lambda-deploy
+        name: go build
+        code: |
+          go build -a -o lambda-deploy
     - script:
-      name: ls
-      code: |
-        ls $WERCKER_SOURCE_DIR
+        name: check contents
+        code: |
+          ls -lh $WERCKER_SOURCE_DIR
