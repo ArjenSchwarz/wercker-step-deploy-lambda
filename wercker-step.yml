@@ -1,0 +1,5 @@
+name: lambda
+version: 1.0.0
+description: |
+    Deploys your code to a Lambda function
+type: deploy

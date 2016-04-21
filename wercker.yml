@@ -1,1 +1,23 @@
 box: wercker/golang
+build:
+  steps:
+    - setup-go-workspace
+    - script:
+        name: go get
+        code: |
+          cd $WERCKER_SOURCE_DIR
+          go version
+          go get -t ./...
+    - wercker/golint
+    - script:
+        name: go build
+        code: |
+          go build -a -o lambda-deploy
+    - script:
+        name: check contents
+        code: |
+          ls -lh $WERCKER_SOURCE_DIR
+    - script:
+        name: Copy to output dir
+        code: |
+          cp README.md run.sh lambda-deploy wercker.yml wercker-step.yml $WERCKER_OUTPUT_DIR
