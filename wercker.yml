@@ -1,8 +1,1 @@
 box: wercker/golang
-build:
-  steps:
-    - wercker/golint
-    - script:
-        name: check contents
-        code: |
-          ls -lh $WERCKER_SOURCE_DIR
